@@ -3,8 +3,6 @@ import { Resend } from "resend";
 import { referralSchema } from "@/lib/schema";
 import { buildNotificationHtml, buildConfirmationHtml } from "@/lib/email/buildHtml";
 
-const resend = new Resend(process.env.RESEND_API_KEY);
-
 // レート制限（簡易版 — インメモリ。Vercel Edge では Redis 推奨）
 const rateLimitMap = new Map<string, { count: number; resetAt: number }>();
 const RATE_LIMIT = 10;
@@ -51,6 +49,8 @@ export async function POST(req: NextRequest) {
   const urgencyPrefix =
     data.urgency === "緊急" ? "【緊急・患者紹介】" :
     data.urgency === "準緊急" ? "【準緊急・患者紹介】" : "【患者紹介】";
+
+  const resend = new Resend(process.env.RESEND_API_KEY);
 
   try {
     await Promise.all([
