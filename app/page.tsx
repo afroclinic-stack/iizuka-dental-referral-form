@@ -11,7 +11,7 @@ export default function Home() {
         boxShadow: "0 1px 4px rgba(0,0,0,0.08), 0 0 0 1px rgba(0,0,0,0.04)",
         padding: "24px 28px",
         marginBottom: 20,
-        borderLeft: "4px solid #C4860A",
+        borderLeft: "4px solid #72C4BC",
       }}>
         <p style={{ fontSize: 11, color: "#888", margin: "0 0 4px", letterSpacing: "0.08em" }}>
           いいづか歯科医院
