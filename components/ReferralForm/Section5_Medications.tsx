@@ -21,6 +21,7 @@ export default function Section5_Medications({ control, register }: Props) {
   return (
     <section className={styles.section}>
       <h2 className={styles.sectionTitle}>5. 服薬情報</h2>
+      <div className={styles.sectionBody}>
 
       {/* 抗凝固薬 */}
       <div className={styles.field}>
@@ -215,6 +216,7 @@ export default function Section5_Medications({ control, register }: Props) {
           {...register("medications.otherMeds")}
           placeholder="その他特記すべき薬剤があれば記載してください"
         />
+      </div>
       </div>
     </section>
   );

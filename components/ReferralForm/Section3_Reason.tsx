@@ -25,6 +25,7 @@ export default function Section3_Reason({ control, register, errors }: Props) {
   return (
     <section className={styles.section}>
       <h2 className={styles.sectionTitle}>3. 紹介理由</h2>
+      <div className={styles.sectionBody}>
 
       <div className={styles.field}>
         <label className={styles.label} htmlFor="mainDiagnosis">
@@ -89,6 +90,7 @@ export default function Section3_Reason({ control, register, errors }: Props) {
         {errors.urgency && (
           <p className={styles.error}>{errors.urgency.message}</p>
         )}
+      </div>
       </div>
     </section>
   );

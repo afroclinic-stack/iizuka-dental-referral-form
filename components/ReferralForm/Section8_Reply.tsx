@@ -8,6 +8,7 @@ export default function Section8_Reply() {
   return (
     <section className={`${styles.section} ${styles.printOnly}`}>
       <h2 className={styles.sectionTitle}>8. 歯科からの処置内容・経過報告欄</h2>
+      <div className={styles.sectionBody}>
 
       <p className={styles.replyTitle}>返書</p>
 
@@ -26,6 +27,7 @@ export default function Section8_Reply() {
           <span>日付：</span>
           <span className={styles.replyUnderline} style={{ minWidth: "120px" }} />
         </div>
+      </div>
       </div>
     </section>
   );

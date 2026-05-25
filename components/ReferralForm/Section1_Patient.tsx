@@ -32,6 +32,7 @@ export default function Section1_Patient({ control, register, errors }: Props) {
   return (
     <section className={styles.section}>
       <h2 className={styles.sectionTitle}>1. 患者基本情報</h2>
+      <div className={styles.sectionBody}>
 
       <div className={styles.field}>
         <label className={`${styles.label} ${styles.required}`} htmlFor="patientNameKanji">
@@ -101,6 +102,7 @@ export default function Section1_Patient({ control, register, errors }: Props) {
         {errors.gender && (
           <p className={styles.error}>{errors.gender.message}</p>
         )}
+      </div>
       </div>
     </section>
   );

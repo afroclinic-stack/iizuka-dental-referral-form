@@ -18,6 +18,7 @@ export default function Section7_Instructions({ control, register }: Props) {
   return (
     <section className={styles.section}>
       <h2 className={styles.sectionTitle}>7. 歯科治療への依頼</h2>
+      <div className={styles.sectionBody}>
 
       {/* 観血処置の可否 */}
       <div className={styles.field}>
@@ -96,6 +97,7 @@ export default function Section7_Instructions({ control, register }: Props) {
           {...register("dentalInstructions.specialNotes")}
           placeholder="その他、歯科治療にあたって特記すべき事項を記載してください"
         />
+      </div>
       </div>
     </section>
   );

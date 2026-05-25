@@ -21,6 +21,7 @@ export default function Section4_Diseases({ control, register, errors }: Props) 
   return (
     <section className={styles.section}>
       <h2 className={styles.sectionTitle}>4. 全身疾患</h2>
+      <div className={styles.sectionBody}>
 
       {/* 高血圧 */}
       <div className={styles.field}>
@@ -280,6 +281,7 @@ export default function Section4_Diseases({ control, register, errors }: Props) 
           <input type="checkbox" {...register("diseases.breastfeeding")} />
           授乳中
         </label>
+      </div>
       </div>
     </section>
   );

@@ -15,6 +15,7 @@ export default function Section6_LabValues({ register }: Props) {
   return (
     <section className={styles.section}>
       <h2 className={styles.sectionTitle}>6. 直近の検査値</h2>
+      <div className={styles.sectionBody}>
 
       {/* PT-INR */}
       <div className={styles.field}>
@@ -102,6 +103,7 @@ export default function Section6_LabValues({ register }: Props) {
           {...register("labValues.otherLab")}
           placeholder="その他参考となる検査値があれば記載してください（例：血小板数、肝機能値など）"
         />
+      </div>
       </div>
     </section>
   );

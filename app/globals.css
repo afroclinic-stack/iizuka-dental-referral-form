@@ -1,13 +1,29 @@
+:root {
+  --primary:       #C4860A;
+  --primary-light: #FDF3E3;
+  --primary-mid:   #F6AD48;
+  --accent:        #8B6914;
+  --text:          #4B443C;
+  --text-light:    #7A6A63;
+  --border:        #DDD5CB;
+  --border-focus:  #F6AD48;
+  --bg:            #F8F6EF;
+  --card:          #FFFFFF;
+  --error:         #C0392B;
+  --success-bg:    #F1F7F3;
+  --success-text:  #2D6A4F;
+}
+
 *, *::before, *::after {
   box-sizing: border-box;
 }
 
 body {
-  font-family: 'MS Mincho', '游明朝', 'Yu Mincho', serif;
-  font-size: 10pt;
-  line-height: 1.6;
-  color: #000;
-  background: #f0f0f0;
+  font-family: 'Noto Sans JP', 'Hiragino Kaku Gothic ProN', 'メイリオ', sans-serif;
+  font-size: 14px;
+  line-height: 1.7;
+  color: var(--text);
+  background: var(--bg);
   margin: 0;
   padding: 0;
 }
@@ -16,9 +32,7 @@ input, textarea, select, button {
   font-family: inherit;
 }
 
-h1, h2, h3, h4 {
-  margin: 0;
-}
+h1, h2, h3, h4 { margin: 0; }
 
 @page {
   size: A4 portrait;
@@ -29,6 +43,7 @@ h1, h2, h3, h4 {
   body {
     background: #fff;
     font-size: 9pt;
+    color: #000;
   }
 
   input[type="text"],
@@ -49,10 +64,5 @@ h1, h2, h3, h4 {
     border-bottom: 1pt solid #000 !important;
     background: transparent !important;
     resize: none !important;
-  }
-
-  input[type="radio"],
-  input[type="checkbox"] {
-    accent-color: #000;
   }
 }

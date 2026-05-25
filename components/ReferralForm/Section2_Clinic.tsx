@@ -23,6 +23,7 @@ export default function Section2_Clinic({ register, errors }: Props) {
   return (
     <section className={styles.section}>
       <h2 className={styles.sectionTitle}>2. 紹介元医療機関情報</h2>
+      <div className={styles.sectionBody}>
 
       <div className={styles.field}>
         <label className={`${styles.label} ${styles.required}`} htmlFor="clinicName">
@@ -115,6 +116,7 @@ export default function Section2_Clinic({ register, errors }: Props) {
           defaultValue={todayString()}
           {...register("referralDate")}
         />
+      </div>
       </div>
     </section>
   );

@@ -1,110 +1,184 @@
+/* ── セクションカード ── */
 .section {
-  padding: 16px;
-  margin-bottom: 24px;
-  border: 1px solid #ccc;
-  border-radius: 4px;
+  background: #fff;
+  border-radius: 10px;
+  box-shadow: 0 2px 12px rgba(75, 68, 60, 0.08);
+  margin-bottom: 20px;
+  overflow: hidden;
 }
 
 .sectionTitle {
-  background: #dce6f1;
-  padding: 6px 12px;
-  font-weight: bold;
-  font-size: 11pt;
-  margin: -16px -16px 12px -16px;
-  border-radius: 4px 4px 0 0;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 13px 20px;
+  font-size: 13px;
+  font-weight: 700;
+  letter-spacing: 0.05em;
+  color: #4B443C;
+  background: #FDF3E3;
+  border-bottom: 1px solid #EDD9A3;
 }
 
+.sectionTitle::before {
+  content: '';
+  display: inline-block;
+  width: 4px;
+  height: 18px;
+  background: #C4860A;
+  border-radius: 2px;
+  flex-shrink: 0;
+}
+
+.sectionBody {
+  padding: 20px 24px;
+}
+
+/* ── フィールド ── */
 .field {
-  margin-bottom: 12px;
+  margin-bottom: 16px;
+}
+
+.field:last-child {
+  margin-bottom: 0;
 }
 
 .label {
   display: block;
-  font-weight: bold;
-  margin-bottom: 4px;
-  font-size: 9.5pt;
+  font-size: 12px;
+  font-weight: 700;
+  color: #6B5D52;
+  margin-bottom: 6px;
+  letter-spacing: 0.03em;
 }
 
 .required::after {
-  content: " ※";
-  color: red;
+  content: ' *';
+  color: #C0392B;
 }
 
 .input {
   width: 100%;
-  border: 1px solid #999;
-  padding: 4px 8px;
-  font-size: 9.5pt;
+  border: 1.5px solid #DDD5CB;
+  border-radius: 6px;
+  padding: 8px 12px;
+  font-size: 14px;
+  color: #4B443C;
+  background: #FAFAF8;
+  transition: border-color 0.15s, box-shadow 0.15s;
   box-sizing: border-box;
-  border-radius: 2px;
+}
+
+.input:focus {
+  outline: none;
+  border-color: #F6AD48;
+  box-shadow: 0 0 0 3px rgba(246, 173, 72, 0.18);
+  background: #fff;
 }
 
 .inputNarrow {
   width: auto;
-  border: 1px solid #999;
-  padding: 4px 8px;
-  font-size: 9.5pt;
-  border-radius: 2px;
+  border: 1.5px solid #DDD5CB;
+  border-radius: 6px;
+  padding: 7px 10px;
+  font-size: 13px;
+  color: #4B443C;
+  background: #FAFAF8;
+  transition: border-color 0.15s, box-shadow 0.15s;
+}
+
+.inputNarrow:focus {
+  outline: none;
+  border-color: #F6AD48;
+  box-shadow: 0 0 0 3px rgba(246, 173, 72, 0.18);
+  background: #fff;
 }
 
 .textarea {
   width: 100%;
-  border: 1px solid #999;
-  padding: 4px 8px;
-  font-size: 9.5pt;
-  box-sizing: border-box;
-  border-radius: 2px;
+  border: 1.5px solid #DDD5CB;
+  border-radius: 6px;
+  padding: 8px 12px;
+  font-size: 14px;
+  color: #4B443C;
+  background: #FAFAF8;
   resize: vertical;
+  min-height: 80px;
+  transition: border-color 0.15s, box-shadow 0.15s;
+  box-sizing: border-box;
+}
+
+.textarea:focus {
+  outline: none;
+  border-color: #F6AD48;
+  box-shadow: 0 0 0 3px rgba(246, 173, 72, 0.18);
+  background: #fff;
 }
 
 .error {
-  color: red;
-  font-size: 8.5pt;
-  margin-top: 2px;
+  color: #C0392B;
+  font-size: 11.5px;
+  margin-top: 4px;
+  display: flex;
+  align-items: center;
+  gap: 4px;
 }
 
+/* ── ラジオ・チェックボックス ── */
 .radioGroup {
   display: flex;
   flex-wrap: wrap;
-  gap: 12px;
+  gap: 8px 20px;
 }
 
 .checkboxGroup {
   display: flex;
   flex-wrap: wrap;
-  gap: 12px;
+  gap: 8px 20px;
 }
 
 .radioLabel {
   display: flex;
   align-items: center;
-  gap: 4px;
-  font-size: 9.5pt;
+  gap: 6px;
+  font-size: 13.5px;
   cursor: pointer;
+  color: #4B443C;
 }
 
 .checkboxLabel {
   display: flex;
   align-items: center;
-  gap: 4px;
-  font-size: 9.5pt;
+  gap: 6px;
+  font-size: 13.5px;
+  cursor: pointer;
+  color: #4B443C;
+}
+
+/* カスタムチェック・ラジオ */
+.radioLabel input[type="radio"],
+.checkboxLabel input[type="checkbox"] {
+  width: 16px;
+  height: 16px;
+  accent-color: #C4860A;
   cursor: pointer;
 }
 
+/* ── 条件付きブロック ── */
 .conditionalBlock {
-  margin-top: 8px;
-  padding: 8px 12px;
-  background: #f8f8f8;
-  border-left: 3px solid #aac;
-  border-radius: 0 2px 2px 0;
+  margin-top: 10px;
+  padding: 12px 16px;
+  background: #FDF8F1;
+  border-left: 3px solid #F6AD48;
+  border-radius: 0 6px 6px 0;
 }
 
 .conditionalRow {
   display: flex;
   flex-wrap: wrap;
   align-items: center;
-  gap: 8px;
-  margin-bottom: 6px;
+  gap: 8px 12px;
+  margin-bottom: 8px;
 }
 
 .conditionalRow:last-child {
@@ -112,152 +186,208 @@
 }
 
 .conditionalLabel {
-  font-size: 9pt;
+  font-size: 12px;
+  color: #7A6A63;
   white-space: nowrap;
   min-width: 80px;
+  font-weight: 600;
 }
 
 .inlineInput {
-  border: 1px solid #999;
-  padding: 3px 6px;
-  font-size: 9pt;
-  border-radius: 2px;
-  width: 140px;
+  border: 1.5px solid #DDD5CB;
+  border-radius: 5px;
+  padding: 5px 9px;
+  font-size: 13px;
+  background: #fff;
+  width: 150px;
+  color: #4B443C;
+  transition: border-color 0.15s;
+}
+
+.inlineInput:focus {
+  outline: none;
+  border-color: #F6AD48;
+  box-shadow: 0 0 0 3px rgba(246, 173, 72, 0.18);
 }
 
 .inlineInputShort {
-  border: 1px solid #999;
-  padding: 3px 6px;
-  font-size: 9pt;
-  border-radius: 2px;
-  width: 90px;
+  border: 1.5px solid #DDD5CB;
+  border-radius: 5px;
+  padding: 5px 9px;
+  font-size: 13px;
+  background: #fff;
+  width: 100px;
+  color: #4B443C;
+  transition: border-color 0.15s;
 }
 
-.submitBtn {
-  background: #2563eb;
-  color: white;
-  padding: 10px 32px;
-  font-size: 11pt;
-  border: none;
-  border-radius: 4px;
-  cursor: pointer;
+.inlineInputShort:focus {
+  outline: none;
+  border-color: #F6AD48;
+  box-shadow: 0 0 0 3px rgba(246, 173, 72, 0.18);
 }
 
-.submitBtn:disabled {
-  background: #93b4f0;
-  cursor: not-allowed;
-}
-
-.submitBtn:hover:not(:disabled) {
-  background: #1d4ed8;
-}
-
-.printBtn {
-  background: #6b7280;
-  color: white;
-  padding: 10px 32px;
-  font-size: 11pt;
-  border: none;
-  border-radius: 4px;
-  cursor: pointer;
-  margin-left: 12px;
-}
-
-.printBtn:hover {
-  background: #4b5563;
-}
-
-.successBox {
-  text-align: center;
-  padding: 40px;
-  background: #ebf5eb;
-  border-radius: 4px;
-}
-
-.errorBox {
-  color: red;
-  background: #fff0f0;
-  border: 1px solid #ffaaaa;
-  padding: 12px;
-  border-radius: 4px;
-  margin-bottom: 12px;
-  font-size: 9.5pt;
-}
-
-.loadingText {
-  font-size: 9.5pt;
-  color: #555;
-  margin-left: 8px;
-}
-
+/* ── ボタン ── */
 .buttonRow {
   display: flex;
   align-items: center;
   gap: 12px;
   margin-top: 8px;
+  flex-wrap: wrap;
 }
 
-.honeypot {
-  display: none;
+.submitBtn {
+  background: linear-gradient(135deg, #D4930C 0%, #C4860A 100%);
+  color: #fff;
+  border: none;
+  border-radius: 8px;
+  padding: 12px 40px;
+  font-size: 15px;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  cursor: pointer;
+  box-shadow: 0 3px 10px rgba(196, 134, 10, 0.35);
+  transition: all 0.2s;
 }
 
-/* Print-only section (Section 8) */
+.submitBtn:hover:not(:disabled) {
+  background: linear-gradient(135deg, #E6A01A 0%, #D4930C 100%);
+  box-shadow: 0 5px 15px rgba(196, 134, 10, 0.45);
+  transform: translateY(-1px);
+}
+
+.submitBtn:active:not(:disabled) {
+  transform: translateY(0);
+}
+
+.submitBtn:disabled {
+  background: #C8B89A;
+  box-shadow: none;
+  cursor: not-allowed;
+}
+
+.printBtn {
+  background: transparent;
+  color: #7A6A63;
+  border: 1.5px solid #C8B89A;
+  border-radius: 8px;
+  padding: 11px 24px;
+  font-size: 14px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.2s;
+}
+
+.printBtn:hover {
+  background: #F8F6EF;
+  border-color: #9A8A83;
+  color: #4B443C;
+}
+
+.loadingText {
+  font-size: 13px;
+  color: #9A8A83;
+}
+
+/* ── フィードバック ── */
+.successBox {
+  text-align: center;
+  padding: 56px 32px;
+  background: #F1F7F3;
+  border-radius: 12px;
+  border: 1px solid #A8D5B8;
+}
+
+.successBox h2 {
+  font-size: 22px;
+  color: #2D6A4F;
+  margin-bottom: 12px;
+  font-weight: 700;
+}
+
+.successBox p {
+  font-size: 14px;
+  color: #4B7A5E;
+  margin: 4px 0;
+}
+
+.errorBox {
+  background: #FEF0EE;
+  border: 1px solid #F5B7B1;
+  border-radius: 8px;
+  padding: 14px 18px;
+  margin-bottom: 16px;
+  font-size: 13.5px;
+  color: #C0392B;
+}
+
+/* ── 印刷専用（Section 8）── */
 .printOnly {
   display: none;
 }
+
+.noPrint {}
 
 @media print {
   .printOnly {
     display: block;
   }
-
   .noPrint {
     display: none !important;
   }
+  .section {
+    box-shadow: none;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+  }
+  .sectionTitle {
+    background: #f5f5f5 !important;
+    -webkit-print-color-adjust: exact;
+    print-color-adjust: exact;
+  }
 }
 
-/* Section 8 reply styles */
+/* ── Section 8 返書欄 ── */
 .replyTitle {
-  font-size: 12pt;
-  font-weight: bold;
+  font-size: 13pt;
+  font-weight: 700;
   text-align: center;
   margin-bottom: 16px;
+  color: #4B443C;
 }
 
-.writingLines {
-  width: 100%;
-}
+.writingLines { width: 100%; }
 
 .writingLine {
-  border-bottom: 1px solid #333;
-  height: 22px;
-  margin-bottom: 4px;
-  width: 100%;
+  border-bottom: 1px solid #555;
+  height: 24px;
+  margin-bottom: 5px;
 }
 
 .replyFooter {
   display: flex;
   justify-content: space-between;
-  margin-top: 16px;
+  margin-top: 20px;
 }
 
 .replyFooterField {
   display: flex;
   align-items: center;
   gap: 8px;
-  font-size: 9.5pt;
+  font-size: 12px;
 }
 
 .replyUnderline {
   display: inline-block;
   border-bottom: 1px solid #333;
-  min-width: 160px;
-  height: 18px;
+  min-width: 180px;
+  height: 20px;
 }
 
+/* ── レイアウトヘルパー ── */
 .ageDisplay {
-  font-size: 9pt;
-  color: #555;
+  font-size: 12px;
+  color: #9A8A83;
   margin-left: 8px;
 }
 
@@ -269,5 +399,21 @@
 
 .twoCol > .field {
   flex: 1;
-  min-width: 160px;
+  min-width: 180px;
+}
+
+.threeCol {
+  display: flex;
+  gap: 16px;
+  flex-wrap: wrap;
+}
+
+.threeCol > .field {
+  flex: 1;
+  min-width: 140px;
+}
+
+/* ── Honeypot ── */
+.honeypot {
+  display: none;
 }
