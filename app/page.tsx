@@ -7,19 +7,19 @@ export default function Home() {
       {/* ヘッダー */}
       <div style={{
         background: "#fff",
-        borderRadius: 12,
-        boxShadow: "0 2px 12px rgba(75,68,60,0.08)",
-        padding: "28px 32px",
-        marginBottom: 24,
-        borderTop: "4px solid #C4860A",
+        borderRadius: 8,
+        boxShadow: "0 1px 4px rgba(0,0,0,0.08), 0 0 0 1px rgba(0,0,0,0.04)",
+        padding: "24px 28px",
+        marginBottom: 20,
+        borderLeft: "4px solid #C4860A",
       }}>
-        <p style={{ fontSize: 11, color: "#9A8A83", margin: "0 0 6px", letterSpacing: "0.08em", textTransform: "uppercase" }}>
+        <p style={{ fontSize: 11, color: "#888", margin: "0 0 4px", letterSpacing: "0.08em" }}>
           いいづか歯科医院
         </p>
-        <h1 style={{ fontSize: 20, fontWeight: 700, color: "#4B443C", margin: "0 0 6px", letterSpacing: "0.05em" }}>
+        <h1 style={{ fontSize: 18, fontWeight: 700, color: "#1A1A1A", margin: "0 0 4px" }}>
           医科→歯科　患者紹介フォーム
         </h1>
-        <p style={{ fontSize: 13, color: "#9A8A83", margin: 0 }}>
+        <p style={{ fontSize: 12, color: "#888", margin: 0 }}>
           〒377-0003 群馬県渋川市八木原70-1　TEL: 0279-22-0808
         </p>
       </div>
@@ -28,11 +28,11 @@ export default function Home() {
 
       {/* フッター */}
       <div style={{
-        marginTop: 32,
-        paddingTop: 16,
-        borderTop: "1px solid #DDD5CB",
-        fontSize: 12,
-        color: "#9A8A83",
+        marginTop: 28,
+        paddingTop: 14,
+        borderTop: "1px solid #DCDCDC",
+        fontSize: 11,
+        color: "#AAA",
         textAlign: "center",
       }}>
         いいづか歯科医院　〒377-0003 群馬県渋川市八木原70-1　TEL: 0279-22-0808　FAX: 0279-22-1888

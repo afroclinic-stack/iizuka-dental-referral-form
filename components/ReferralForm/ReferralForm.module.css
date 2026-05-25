@@ -1,9 +1,9 @@
 /* ── セクションカード ── */
 .section {
   background: #fff;
-  border-radius: 10px;
-  box-shadow: 0 2px 12px rgba(75, 68, 60, 0.08);
-  margin-bottom: 20px;
+  border-radius: 8px;
+  box-shadow: 0 1px 4px rgba(0,0,0,0.08), 0 0 0 1px rgba(0,0,0,0.04);
+  margin-bottom: 16px;
   overflow: hidden;
 }
 
@@ -11,20 +11,20 @@
   display: flex;
   align-items: center;
   gap: 10px;
-  padding: 13px 20px;
+  padding: 12px 20px;
   font-size: 13px;
   font-weight: 700;
-  letter-spacing: 0.05em;
-  color: #4B443C;
-  background: #FDF3E3;
-  border-bottom: 1px solid #EDD9A3;
+  letter-spacing: 0.04em;
+  color: #1A1A1A;
+  background: #FAFAFA;
+  border-bottom: 1px solid #E5E5E5;
 }
 
 .sectionTitle::before {
   content: '';
   display: inline-block;
   width: 4px;
-  height: 18px;
+  height: 16px;
   background: #C4860A;
   border-radius: 2px;
   flex-shrink: 0;
@@ -36,7 +36,7 @@
 
 /* ── フィールド ── */
 .field {
-  margin-bottom: 16px;
+  margin-bottom: 14px;
 }
 
 .field:last-child {
@@ -47,9 +47,9 @@
   display: block;
   font-size: 12px;
   font-weight: 700;
-  color: #6B5D52;
-  margin-bottom: 6px;
-  letter-spacing: 0.03em;
+  color: #444;
+  margin-bottom: 5px;
+  letter-spacing: 0.02em;
 }
 
 .required::after {
@@ -59,49 +59,46 @@
 
 .input {
   width: 100%;
-  border: 1.5px solid #DDD5CB;
-  border-radius: 6px;
-  padding: 8px 12px;
+  border: 1.5px solid #D0D0D0;
+  border-radius: 5px;
+  padding: 8px 11px;
   font-size: 14px;
-  color: #4B443C;
-  background: #FAFAF8;
+  color: #1A1A1A;
+  background: #fff;
   transition: border-color 0.15s, box-shadow 0.15s;
   box-sizing: border-box;
 }
 
 .input:focus {
   outline: none;
-  border-color: #F6AD48;
-  box-shadow: 0 0 0 3px rgba(246, 173, 72, 0.18);
-  background: #fff;
+  border-color: #C4860A;
+  box-shadow: 0 0 0 3px rgba(196,134,10,0.15);
 }
 
 .inputNarrow {
-  width: auto;
-  border: 1.5px solid #DDD5CB;
-  border-radius: 6px;
+  border: 1.5px solid #D0D0D0;
+  border-radius: 5px;
   padding: 7px 10px;
   font-size: 13px;
-  color: #4B443C;
-  background: #FAFAF8;
+  color: #1A1A1A;
+  background: #fff;
   transition: border-color 0.15s, box-shadow 0.15s;
 }
 
 .inputNarrow:focus {
   outline: none;
-  border-color: #F6AD48;
-  box-shadow: 0 0 0 3px rgba(246, 173, 72, 0.18);
-  background: #fff;
+  border-color: #C4860A;
+  box-shadow: 0 0 0 3px rgba(196,134,10,0.15);
 }
 
 .textarea {
   width: 100%;
-  border: 1.5px solid #DDD5CB;
-  border-radius: 6px;
-  padding: 8px 12px;
+  border: 1.5px solid #D0D0D0;
+  border-radius: 5px;
+  padding: 8px 11px;
   font-size: 14px;
-  color: #4B443C;
-  background: #FAFAF8;
+  color: #1A1A1A;
+  background: #fff;
   resize: vertical;
   min-height: 80px;
   transition: border-color 0.15s, box-shadow 0.15s;
@@ -110,18 +107,14 @@
 
 .textarea:focus {
   outline: none;
-  border-color: #F6AD48;
-  box-shadow: 0 0 0 3px rgba(246, 173, 72, 0.18);
-  background: #fff;
+  border-color: #C4860A;
+  box-shadow: 0 0 0 3px rgba(196,134,10,0.15);
 }
 
 .error {
   color: #C0392B;
   font-size: 11.5px;
   margin-top: 4px;
-  display: flex;
-  align-items: center;
-  gap: 4px;
 }
 
 /* ── ラジオ・チェックボックス ── */
@@ -141,21 +134,20 @@
   display: flex;
   align-items: center;
   gap: 6px;
-  font-size: 13.5px;
+  font-size: 14px;
   cursor: pointer;
-  color: #4B443C;
+  color: #1A1A1A;
 }
 
 .checkboxLabel {
   display: flex;
   align-items: center;
   gap: 6px;
-  font-size: 13.5px;
+  font-size: 14px;
   cursor: pointer;
-  color: #4B443C;
+  color: #1A1A1A;
 }
 
-/* カスタムチェック・ラジオ */
 .radioLabel input[type="radio"],
 .checkboxLabel input[type="checkbox"] {
   width: 16px;
@@ -167,10 +159,10 @@
 /* ── 条件付きブロック ── */
 .conditionalBlock {
   margin-top: 10px;
-  padding: 12px 16px;
-  background: #FDF8F1;
-  border-left: 3px solid #F6AD48;
-  border-radius: 0 6px 6px 0;
+  padding: 12px 14px;
+  background: #FAFAFA;
+  border-left: 3px solid #E0A020;
+  border-radius: 0 5px 5px 0;
 }
 
 .conditionalRow {
@@ -187,44 +179,44 @@
 
 .conditionalLabel {
   font-size: 12px;
-  color: #7A6A63;
+  color: #555;
   white-space: nowrap;
   min-width: 80px;
   font-weight: 600;
 }
 
 .inlineInput {
-  border: 1.5px solid #DDD5CB;
+  border: 1.5px solid #D0D0D0;
   border-radius: 5px;
   padding: 5px 9px;
   font-size: 13px;
   background: #fff;
   width: 150px;
-  color: #4B443C;
+  color: #1A1A1A;
   transition: border-color 0.15s;
 }
 
 .inlineInput:focus {
   outline: none;
-  border-color: #F6AD48;
-  box-shadow: 0 0 0 3px rgba(246, 173, 72, 0.18);
+  border-color: #C4860A;
+  box-shadow: 0 0 0 3px rgba(196,134,10,0.15);
 }
 
 .inlineInputShort {
-  border: 1.5px solid #DDD5CB;
+  border: 1.5px solid #D0D0D0;
   border-radius: 5px;
   padding: 5px 9px;
   font-size: 13px;
   background: #fff;
   width: 100px;
-  color: #4B443C;
+  color: #1A1A1A;
   transition: border-color 0.15s;
 }
 
 .inlineInputShort:focus {
   outline: none;
-  border-color: #F6AD48;
-  box-shadow: 0 0 0 3px rgba(246, 173, 72, 0.18);
+  border-color: #C4860A;
+  box-shadow: 0 0 0 3px rgba(196,134,10,0.15);
 }
 
 /* ── ボタン ── */
@@ -237,41 +229,36 @@
 }
 
 .submitBtn {
-  background: linear-gradient(135deg, #D4930C 0%, #C4860A 100%);
+  background: #C4860A;
   color: #fff;
   border: none;
-  border-radius: 8px;
-  padding: 12px 40px;
+  border-radius: 6px;
+  padding: 11px 36px;
   font-size: 15px;
   font-weight: 700;
-  letter-spacing: 0.08em;
+  letter-spacing: 0.06em;
   cursor: pointer;
-  box-shadow: 0 3px 10px rgba(196, 134, 10, 0.35);
-  transition: all 0.2s;
+  transition: background 0.2s, box-shadow 0.2s;
+  box-shadow: 0 2px 8px rgba(196,134,10,0.3);
 }
 
 .submitBtn:hover:not(:disabled) {
-  background: linear-gradient(135deg, #E6A01A 0%, #D4930C 100%);
-  box-shadow: 0 5px 15px rgba(196, 134, 10, 0.45);
-  transform: translateY(-1px);
-}
-
-.submitBtn:active:not(:disabled) {
-  transform: translateY(0);
+  background: #A8720A;
+  box-shadow: 0 4px 12px rgba(196,134,10,0.4);
 }
 
 .submitBtn:disabled {
-  background: #C8B89A;
+  background: #C8C0B0;
   box-shadow: none;
   cursor: not-allowed;
 }
 
 .printBtn {
   background: transparent;
-  color: #7A6A63;
-  border: 1.5px solid #C8B89A;
-  border-radius: 8px;
-  padding: 11px 24px;
+  color: #555;
+  border: 1.5px solid #C0C0C0;
+  border-radius: 6px;
+  padding: 10px 22px;
   font-size: 14px;
   font-weight: 600;
   cursor: pointer;
@@ -279,62 +266,55 @@
 }
 
 .printBtn:hover {
-  background: #F8F6EF;
-  border-color: #9A8A83;
-  color: #4B443C;
+  background: #F5F5F5;
+  border-color: #999;
+  color: #333;
 }
 
 .loadingText {
   font-size: 13px;
-  color: #9A8A83;
+  color: #888;
 }
 
 /* ── フィードバック ── */
 .successBox {
   text-align: center;
   padding: 56px 32px;
-  background: #F1F7F3;
-  border-radius: 12px;
+  background: #F0F7F2;
+  border-radius: 10px;
   border: 1px solid #A8D5B8;
 }
 
 .successBox h2 {
-  font-size: 22px;
-  color: #2D6A4F;
-  margin-bottom: 12px;
+  font-size: 20px;
+  color: #1A5C35;
+  margin-bottom: 10px;
   font-weight: 700;
 }
 
 .successBox p {
   font-size: 14px;
-  color: #4B7A5E;
+  color: #2D6A4F;
   margin: 4px 0;
 }
 
 .errorBox {
   background: #FEF0EE;
   border: 1px solid #F5B7B1;
-  border-radius: 8px;
-  padding: 14px 18px;
+  border-radius: 6px;
+  padding: 13px 16px;
   margin-bottom: 16px;
   font-size: 13.5px;
   color: #C0392B;
 }
 
-/* ── 印刷専用（Section 8）── */
-.printOnly {
-  display: none;
-}
-
+/* ── 印刷専用 ── */
+.printOnly { display: none; }
 .noPrint {}
 
 @media print {
-  .printOnly {
-    display: block;
-  }
-  .noPrint {
-    display: none !important;
-  }
+  .printOnly { display: block; }
+  .noPrint { display: none !important; }
   .section {
     box-shadow: none;
     border: 1px solid #ccc;
@@ -347,13 +327,13 @@
   }
 }
 
-/* ── Section 8 返書欄 ── */
+/* ── Section8 返書欄 ── */
 .replyTitle {
   font-size: 13pt;
   font-weight: 700;
   text-align: center;
   margin-bottom: 16px;
-  color: #4B443C;
+  color: #1A1A1A;
 }
 
 .writingLines { width: 100%; }
@@ -387,7 +367,7 @@
 /* ── レイアウトヘルパー ── */
 .ageDisplay {
   font-size: 12px;
-  color: #9A8A83;
+  color: #888;
   margin-left: 8px;
 }
 
@@ -413,7 +393,4 @@
   min-width: 140px;
 }
 
-/* ── Honeypot ── */
-.honeypot {
-  display: none;
-}
+.honeypot { display: none; }
