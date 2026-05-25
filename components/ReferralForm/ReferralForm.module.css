@@ -1,0 +1,273 @@
+.section {
+  padding: 16px;
+  margin-bottom: 24px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+}
+
+.sectionTitle {
+  background: #dce6f1;
+  padding: 6px 12px;
+  font-weight: bold;
+  font-size: 11pt;
+  margin: -16px -16px 12px -16px;
+  border-radius: 4px 4px 0 0;
+}
+
+.field {
+  margin-bottom: 12px;
+}
+
+.label {
+  display: block;
+  font-weight: bold;
+  margin-bottom: 4px;
+  font-size: 9.5pt;
+}
+
+.required::after {
+  content: " ※";
+  color: red;
+}
+
+.input {
+  width: 100%;
+  border: 1px solid #999;
+  padding: 4px 8px;
+  font-size: 9.5pt;
+  box-sizing: border-box;
+  border-radius: 2px;
+}
+
+.inputNarrow {
+  width: auto;
+  border: 1px solid #999;
+  padding: 4px 8px;
+  font-size: 9.5pt;
+  border-radius: 2px;
+}
+
+.textarea {
+  width: 100%;
+  border: 1px solid #999;
+  padding: 4px 8px;
+  font-size: 9.5pt;
+  box-sizing: border-box;
+  border-radius: 2px;
+  resize: vertical;
+}
+
+.error {
+  color: red;
+  font-size: 8.5pt;
+  margin-top: 2px;
+}
+
+.radioGroup {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+}
+
+.checkboxGroup {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+}
+
+.radioLabel {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  font-size: 9.5pt;
+  cursor: pointer;
+}
+
+.checkboxLabel {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  font-size: 9.5pt;
+  cursor: pointer;
+}
+
+.conditionalBlock {
+  margin-top: 8px;
+  padding: 8px 12px;
+  background: #f8f8f8;
+  border-left: 3px solid #aac;
+  border-radius: 0 2px 2px 0;
+}
+
+.conditionalRow {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 8px;
+  margin-bottom: 6px;
+}
+
+.conditionalRow:last-child {
+  margin-bottom: 0;
+}
+
+.conditionalLabel {
+  font-size: 9pt;
+  white-space: nowrap;
+  min-width: 80px;
+}
+
+.inlineInput {
+  border: 1px solid #999;
+  padding: 3px 6px;
+  font-size: 9pt;
+  border-radius: 2px;
+  width: 140px;
+}
+
+.inlineInputShort {
+  border: 1px solid #999;
+  padding: 3px 6px;
+  font-size: 9pt;
+  border-radius: 2px;
+  width: 90px;
+}
+
+.submitBtn {
+  background: #2563eb;
+  color: white;
+  padding: 10px 32px;
+  font-size: 11pt;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+.submitBtn:disabled {
+  background: #93b4f0;
+  cursor: not-allowed;
+}
+
+.submitBtn:hover:not(:disabled) {
+  background: #1d4ed8;
+}
+
+.printBtn {
+  background: #6b7280;
+  color: white;
+  padding: 10px 32px;
+  font-size: 11pt;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  margin-left: 12px;
+}
+
+.printBtn:hover {
+  background: #4b5563;
+}
+
+.successBox {
+  text-align: center;
+  padding: 40px;
+  background: #ebf5eb;
+  border-radius: 4px;
+}
+
+.errorBox {
+  color: red;
+  background: #fff0f0;
+  border: 1px solid #ffaaaa;
+  padding: 12px;
+  border-radius: 4px;
+  margin-bottom: 12px;
+  font-size: 9.5pt;
+}
+
+.loadingText {
+  font-size: 9.5pt;
+  color: #555;
+  margin-left: 8px;
+}
+
+.buttonRow {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin-top: 8px;
+}
+
+.honeypot {
+  display: none;
+}
+
+/* Print-only section (Section 8) */
+.printOnly {
+  display: none;
+}
+
+@media print {
+  .printOnly {
+    display: block;
+  }
+
+  .noPrint {
+    display: none !important;
+  }
+}
+
+/* Section 8 reply styles */
+.replyTitle {
+  font-size: 12pt;
+  font-weight: bold;
+  text-align: center;
+  margin-bottom: 16px;
+}
+
+.writingLines {
+  width: 100%;
+}
+
+.writingLine {
+  border-bottom: 1px solid #333;
+  height: 22px;
+  margin-bottom: 4px;
+  width: 100%;
+}
+
+.replyFooter {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 16px;
+}
+
+.replyFooterField {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 9.5pt;
+}
+
+.replyUnderline {
+  display: inline-block;
+  border-bottom: 1px solid #333;
+  min-width: 160px;
+  height: 18px;
+}
+
+.ageDisplay {
+  font-size: 9pt;
+  color: #555;
+  margin-left: 8px;
+}
+
+.twoCol {
+  display: flex;
+  gap: 16px;
+  flex-wrap: wrap;
+}
+
+.twoCol > .field {
+  flex: 1;
+  min-width: 160px;
+}
