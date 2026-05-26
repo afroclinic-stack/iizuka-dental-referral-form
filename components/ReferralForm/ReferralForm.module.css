@@ -311,10 +311,14 @@
 /* ── 印刷専用 ── */
 .printOnly { display: none; }
 .noPrint {}
+.screenForm {}
+.printDocument { display: none; }
 
 @media print {
   .printOnly { display: block; }
   .noPrint { display: none !important; }
+  .screenForm { display: none !important; }
+  .printDocument { display: block !important; }
   .section {
     box-shadow: none;
     border: 1px solid #ccc;

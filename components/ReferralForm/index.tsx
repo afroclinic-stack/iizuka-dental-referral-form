@@ -5,6 +5,7 @@ import { useForm } from "react-hook-form";
 import { standardSchemaResolver } from "@hookform/resolvers/standard-schema";
 import { referralSchema, ReferralFormData } from "@/lib/schema";
 import styles from "./ReferralForm.module.css";
+import PrintView from "@/components/PrintView";
 
 import Section1_Patient from "./Section1_Patient";
 import Section2_Clinic from "./Section2_Clinic";
@@ -111,6 +112,7 @@ export default function ReferralForm() {
   });
 
   const sectionProps = { control, register, watch, errors };
+  const formValues = watch();
 
   const onSubmit = async (data: ReferralFormData) => {
     const confirmed = window.confirm(
@@ -160,56 +162,66 @@ export default function ReferralForm() {
   }
 
   return (
-    <form onSubmit={handleSubmit(onSubmit)} noValidate>
-      {/* Honeypot（スパム対策） */}
-      <div className={styles.honeypot} aria-hidden="true">
-        <label htmlFor="_honeypot">Leave this field blank</label>
-        <input
-          id="_honeypot"
-          type="text"
-          tabIndex={-1}
-          autoComplete="off"
-          {...register("_honeypot")}
-        />
+    <>
+      {/* 印刷用A4書類（印刷時のみ表示） */}
+      <div className={styles.printDocument}>
+        <PrintView data={formValues} />
       </div>
 
-      <Section1_Patient {...sectionProps} />
-      <Section2_Clinic {...sectionProps} />
-      <Section3_Reason {...sectionProps} />
-      <Section4_Diseases {...sectionProps} />
-      <Section5_Medications {...sectionProps} />
-      <Section6_LabValues {...sectionProps} />
-      <Section7_Instructions {...sectionProps} />
-      <Section8_Reply />
+      {/* 通常のWebフォーム（印刷時は非表示） */}
+      <div className={styles.screenForm}>
+        <form onSubmit={handleSubmit(onSubmit)} noValidate>
+          {/* Honeypot（スパム対策） */}
+          <div className={styles.honeypot} aria-hidden="true">
+            <label htmlFor="_honeypot">Leave this field blank</label>
+            <input
+              id="_honeypot"
+              type="text"
+              tabIndex={-1}
+              autoComplete="off"
+              {...register("_honeypot")}
+            />
+          </div>
 
-      {submitStatus === "error" && errorMessage && (
-        <div className={styles.errorBox} role="alert">
-          {errorMessage}
-        </div>
-      )}
+          <Section1_Patient {...sectionProps} />
+          <Section2_Clinic {...sectionProps} />
+          <Section3_Reason {...sectionProps} />
+          <Section4_Diseases {...sectionProps} />
+          <Section5_Medications {...sectionProps} />
+          <Section6_LabValues {...sectionProps} />
+          <Section7_Instructions {...sectionProps} />
+          <Section8_Reply />
 
-      <div className={`${styles.buttonRow} ${styles.noPrint}`}>
-        <button
-          type="submit"
-          className={styles.submitBtn}
-          disabled={submitStatus === "submitting"}
-        >
-          {submitStatus === "submitting" ? "送信中..." : "送信する"}
-        </button>
+          {submitStatus === "error" && errorMessage && (
+            <div className={styles.errorBox} role="alert">
+              {errorMessage}
+            </div>
+          )}
 
-        <button
-          type="button"
-          className={styles.printBtn}
-          onClick={() => window.print()}
-          disabled={submitStatus === "submitting"}
-        >
-          印刷
-        </button>
+          <div className={`${styles.buttonRow} ${styles.noPrint}`}>
+            <button
+              type="submit"
+              className={styles.submitBtn}
+              disabled={submitStatus === "submitting"}
+            >
+              {submitStatus === "submitting" ? "送信中..." : "送信する"}
+            </button>
 
-        {submitStatus === "submitting" && (
-          <span className={styles.loadingText}>送信中です。しばらくお待ちください...</span>
-        )}
+            <button
+              type="button"
+              className={styles.printBtn}
+              onClick={() => window.print()}
+              disabled={submitStatus === "submitting"}
+            >
+              印刷 / PDF出力
+            </button>
+
+            {submitStatus === "submitting" && (
+              <span className={styles.loadingText}>送信中です。しばらくお待ちください...</span>
+            )}
+          </div>
+        </form>
       </div>
-    </form>
+    </>
   );
 }

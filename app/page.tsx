@@ -2,10 +2,10 @@ import ReferralForm from "@/components/ReferralForm";
 
 export default function Home() {
   return (
-    <div style={{ maxWidth: 780, margin: "0 auto", padding: "24px 16px 40px" }}>
+    <div className="pageWrapper" style={{ maxWidth: 780, margin: "0 auto", padding: "24px 16px 40px" }}>
 
-      {/* ヘッダー */}
-      <div style={{
+      {/* ヘッダー（印刷時は非表示） */}
+      <div className="screenOnly" style={{
         background: "#fff",
         borderRadius: 8,
         boxShadow: "0 1px 4px rgba(0,0,0,0.08), 0 0 0 1px rgba(0,0,0,0.04)",
@@ -26,8 +26,8 @@ export default function Home() {
 
       <ReferralForm />
 
-      {/* フッター */}
-      <div style={{
+      {/* フッター（印刷時は非表示） */}
+      <div className="screenOnly" style={{
         marginTop: 28,
         paddingTop: 14,
         borderTop: "1px solid #DCDCDC",
